@@ -22,6 +22,6 @@ def find_tangent_point(conv, orig) -> np.ndarray:
 
         if middle + 1 < len(conv) and orient(orig, conv[middle], conv[middle + 1]) <= 0: start = middle + 1; continue
         if middle - 1 <= 0 and orient(orig, conv[middle], conv[middle - 1]) <= 0: end = middle - 1; continue
-        return conv[middle]
+        return middle
 
-    return conv[start]
+    return start
