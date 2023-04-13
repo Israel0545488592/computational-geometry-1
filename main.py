@@ -8,3 +8,5 @@ if __name__ == '__main__':
     start = perf_counter()
     find_tangent_point(conv, orig)
     print(f'run time for input size of a 1000000 points" {perf_counter() - start} seconds')
+
+    for i in range(1, 4): display_tangent(f'input/input{i}.txt')

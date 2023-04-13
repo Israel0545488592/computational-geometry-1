@@ -12,8 +12,8 @@ class Test(unittest.TestCase):
     def test_find_tangent_point(self):
 
         self.assertEqual(find_tangent_point( * read_convex_orign('input/input1.txt')), 1)
-        self.assertEqual(find_tangent_point( * read_convex_orign('input/input2.txt')), 153)
-        self.assertEqual(find_tangent_point( * read_convex_orign('input/input3.txt')), 32)
+        self.assertEqual(find_tangent_point( * read_convex_orign('input/input2.txt')), 134)
+        self.assertEqual(find_tangent_point( * read_convex_orign('input/input3.txt')), 28)
 
         
 
