@@ -1,5 +1,5 @@
 import unittest
-from convex_tangent import *
+from utils import *
 
 class Test(unittest.TestCase):
 
@@ -11,8 +11,10 @@ class Test(unittest.TestCase):
 
     def test_find_tangent_point(self):
 
-        self.find_tangent_point()
+        self.assertEqual(find_tangent_point( * read_convex_orign('input/input1.txt')).tolist(), [7, 1])
+        self.assertEqual(find_tangent_point( * read_convex_orign('input/input2.txt')).tolist(), [-123, 309])
+        self.assertEqual(find_tangent_point( * read_convex_orign('input/input3.txt')).tolist(), [16, 25])
 
-if __name__ == '__main__':
+        
 
-    unittest.main()
+if __name__ == '__main__': unittest.main()

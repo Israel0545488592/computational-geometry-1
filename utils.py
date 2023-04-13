@@ -9,10 +9,10 @@ def read_convex_orign(src: str):
     with open(src) as file:
 
         data = file.readlines()
-        return np.loadtxt(data[1:-1]), np.loadtxt(data[-1:])
+        return np.loadtxt(data[1:-1], dtype = int), np.loadtxt(data[-1:], dtype = int)
 
 
-def find_tangent_point(conv, orig):
+def find_tangent_point(conv, orig) -> np.ndarray:
 
     start, end = 0, len(conv) - 1
 
@@ -25,6 +25,3 @@ def find_tangent_point(conv, orig):
         return conv[middle]
 
     return conv[start]
-
-
-np.savetxt('input/huge.txt', np.random.randint(-100, 100, (10**6, 2), dtype = int), fmt = '%d')
