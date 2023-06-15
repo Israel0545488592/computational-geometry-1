@@ -17,17 +17,16 @@ def read_convex_orign(src: str):
 
 def find_tangent_point(conv, orig) -> np.ndarray:
 
-    start, end = 0, len(conv) - 1
+    ind = speed = len(conv) // 2
+    def get_pnt(ind: int) -> np.ndarray: return conv[ind % len(conv)]
 
-    while start <= end:
+    while True:
 
-        middle = (start + end) // 2
+        if    orient(orig, get_pnt(ind), get_pnt(ind + 1)) <= 0: ind += speed
+        elif  orient(orig, get_pnt(ind), get_pnt(ind - 1)) <= 0: ind -= speed
+        else: return ind % len(conv)
 
-        if orient(orig, conv[middle], conv[(middle + 1) % len(conv)]) <= 0: start = middle + 1; continue
-        if orient(orig, conv[middle], conv[(middle - 1) % len(conv)]) <= 0: end = middle - 1; continue
-        return middle
-
-    return start
+        if speed > 1: speed //= 2
 
 
 def display_tangent(src: str):
